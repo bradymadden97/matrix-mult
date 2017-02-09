@@ -1,0 +1,138 @@
+<html>
+<head>
+	<title>Matrix Multiplier</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" EMILY ROCKS! href="style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+</head>
+<body>
+	<div style="text-align:center">
+		<h2><a href="">Linear Matrix Multiplier</a></h2>
+		<div>
+			<span style="font-size:36px">[A][B]=[C]</span>
+		</div>
+	</div>
+	<br>
+	<hr style="width:66%">
+	<div id="setup" style="text-align:center">
+		<table align="center">
+			<tr>
+				<td colspan="2">
+					<b>Dimensions A:</b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Rows: 
+				</td>
+				<td>
+					<input class="set" id="a-row" type='number' min='1' />
+				</td>
+			<tr>
+				<td>
+					Cols:
+				</td>
+				<td>
+					<input class="set" id='a-col' type='number' min='1' />
+				</td>
+			</tr>
+		</table>
+		<table align="center">
+			<tr>
+				<td colspan="2">
+					<b>Dimensions B:</b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Rows: 
+				</td>
+				<td>
+					<input class="set" id="b-row" type='number' min='1' />
+				</td>
+			<tr>
+				<td>
+					Cols:
+				</td>
+				<td>
+					<input class="set" id='b-col' type='number' min='1' />
+				</td>
+			</tr>
+		</table>
+		<table align="center">
+			<tr>
+				<td colspan="2">
+					<b>Dimensions C:</b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Rows: 
+				</td>
+				<td>
+					<input class="set" id="c-row" type='number' min='1' />
+				</td>
+			<tr>
+				<td>
+					Cols:
+				</td>
+				<td>
+					<input class="set" id='c-col' type='number' min='1' />
+				</td>
+			</tr>
+		</table>
+
+		<button id="creatematrix" style="margin-top:20px;width:150px;height:40;font-size:18">Create Matrix</button>
+	</div>
+	<div id="aandb" style="display:none;text-align:center">
+		<div id="amatrix" align="center" class="amatrix">
+			
+		</div>
+		<br>
+		<div id="bmatrix" align="center" class="bmatrix">
+		</div>
+		<button id="solvematrix" style="margin-top:20px;width:150px;height:40px;font-size:18px">Find Product</button>
+	</div>
+	<div id="ansc" style="display:none">
+		<hr style="width:66%;margin-top:15px;margin-bottom:15px">
+		<div id="cmatrix" style="text-align:center" class="cmatrix">
+
+		</div>
+	</div>	
+
+	<script>
+		$(document).ready(function(){
+			$("#a-row").focus();
+		});
+		$('#a-col').on('keyup', function(){
+			$('#b-row').val($(this).val());
+		});
+		$('#b-row').on('keyup', function(){
+			$('#a-col').val($(this).val());
+		});
+		$('#a-row').on('keyup', function(){
+			$('#c-row').val($(this).val());
+		});
+		$('#b-col').on('keyup', function(){
+			$('#c-col').val($(this).val());
+		});
+		$('#c-row').on('keyup', function(){
+			$('#a-row').val($(this).val());
+		});
+		$('#c-col').on('keyup', function(){
+			$('#b-col').val($(this).val());
+		});
+		$(".set").on('keyup', function(event){
+			if(event.keyCode == 13){
+				$("#creatematrix").click();
+			}
+		});
+		$("#creatematrix").on('click', function(){
+			creatematrix($("#a-row").val(), $("#a-col").val(), $("#b-row").val(), $("#b-col").val());
+		});
+		$("#solvematrix").on('click', function(){
+			computematrix($("#a-row").val(), $("#a-col").val(), $("#b-row").val(), $("#b-col").val());
+		});
+	</script>
+</body>

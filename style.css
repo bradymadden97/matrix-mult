@@ -1,0 +1,35 @@
+html{
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+table {
+	margin-bottom:10px;
+}
+
+tr {
+	height:25px;
+}
+
+td {
+	padding-right:20px;
+}
+
+.m {
+	padding-right:10px;
+}
+
+input{
+	width:75px;
+}
+
+a {
+	color:inherit;
+	text-decoration:none;
+}
+
+button {
+	border-radius: 5px;
+	border-style:none;
+	cursor:pointer;
+	border: 1px solid black;
+}
