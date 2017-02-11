@@ -43,6 +43,7 @@ function computematrix(arow, acol, brow, bcol){
 }
 
 function printmatrix(matrix){
+	$(".cmatrix").empty();
 	var r = matrix.length;
 	var c = matrix[0].length;
 	$(".cmatrix").append("<table align='center'>");
