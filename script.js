@@ -1,3 +1,5 @@
+var testvar = 10049;
+
 function creatematrix(arow, acol, brow, bcol){
 	$(".amatrix").append("<table>");
 	for(var i = 0; i < arow; i++){
