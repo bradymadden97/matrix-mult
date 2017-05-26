@@ -1,4 +1,4 @@
-var testvar = 10050;
+var testvar = 10051;
 
 function creatematrix(arow, acol, brow, bcol){
 	$(".amatrix").append("<table>");
